@@ -1,14 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./components/Main/Main.jsx";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    children: [
+      {
+        path: "register",
+        element: <RegisterForm></RegisterForm>,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+    ],
   },
 ]);
 
